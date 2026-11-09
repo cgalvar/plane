@@ -31,6 +31,7 @@ from plane.app.views import (
     WorkItemDescriptionVersionEndpoint,
     IssueMetaEndpoint,
     IssueDetailIdentifierEndpoint,
+    ProjectDoneCriteriaEndpoint,
 )
 
 urlpatterns = [
@@ -282,5 +283,10 @@ urlpatterns = [
         "workspaces/<str:slug>/work-items/<str:project_identifier>-<str:issue_identifier>/",
         IssueDetailIdentifierEndpoint.as_view(),
         name="issue-detail-identifier",
+    ),
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/done-criteria/",
+        ProjectDoneCriteriaEndpoint.as_view(),
+        name="project-done-criteria",
     ),
 ]

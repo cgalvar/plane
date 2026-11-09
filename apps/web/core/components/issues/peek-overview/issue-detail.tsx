@@ -28,6 +28,7 @@ import { WorkItemVersionService } from "@/services/issue";
 import type { TIssueOperations } from "../issue-detail";
 import { IssueParentDetail } from "../issue-detail/parent";
 import { IssueReaction } from "../issue-detail/reactions";
+import { DoneCriteria } from "../issue-detail/done-criteria";
 import { IssueTitleInput } from "../title-input";
 // services init
 const workItemVersionService = new WorkItemVersionService();
@@ -105,6 +106,8 @@ export const PeekOverviewIssueDetails = observer(function PeekOverviewIssueDetai
         value={issue.name}
         containerClassName="-ml-3"
       />
+
+      <DoneCriteria workspaceSlug={workspaceSlug} projectId={issue.project_id} />
 
       <DescriptionInput
         issueSequenceId={issue.sequence_id}

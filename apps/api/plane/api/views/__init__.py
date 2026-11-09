@@ -15,6 +15,8 @@ from .state import (
     StateDetailAPIEndpoint,
 )
 
+from .done_criteria import ProjectDoneCriteriaAPIEndpoint
+
 from .issue import (
     WorkspaceIssueAPIEndpoint,
     IssueListCreateAPIEndpoint,
